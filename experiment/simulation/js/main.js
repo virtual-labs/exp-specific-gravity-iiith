@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 				document.getElementById("output2").innerHTML = "Mass of wet soil = " + String(wetSoilMass) + "g";
 			}
 
-			else if(step === 8)
+			else if(step === enabled.length - 2)
 			{
 				logic(tableData);
 				generateTableHead(table, Object.keys(tableData[0]));
@@ -79,8 +79,8 @@ document.addEventListener('DOMContentLoaded', function() {
 			this.pos = [x, y];
 		};
 
-		draw(ctx) {
-			ctx.fillStyle = "white";
+		draw(ctx, fill="white") {
+			ctx.fillStyle = fill;
 			ctx.lineWidth = 3;
 
 			if(this.width < 2 * this.radius) 
@@ -93,23 +93,13 @@ document.addEventListener('DOMContentLoaded', function() {
 				this.radius = this.height / 2;
 			}
 
-			ctx.beginPath();
-			ctx.moveTo(this.pos[0] + this.radius, this.pos[1]);
-			ctx.arcTo(this.pos[0] + this.width, this.pos[1], this.pos[0] + this.width, this.pos[1] + this.height, this.radius);
-			ctx.arcTo(this.pos[0] + this.width, this.pos[1] + this.height, this.pos[0], this.pos[1] + this.height, this.radius);
-			ctx.arcTo(this.pos[0], this.pos[1] + this.height, this.pos[0], this.pos[1], this.radius);
-			ctx.arcTo(this.pos[0], this.pos[1], this.pos[0] + this.width, this.pos[1], this.radius);
-			ctx.closePath();
-			ctx.fill();
-			ctx.stroke();
-
 			const e1 = [this.pos[0] + this.width, this.pos[1]], e2 = [...this.pos];
-			const gradX = (e1[0] - e2[0]) / -4, gradY = 10;
-
+			const gradX = (e1[0] - e2[0]) / -4, gradY = 20;
 			ctx.beginPath();
 			ctx.moveTo(e2[0], e2[1]);
 			curvedArea(ctx, e2, -1 * gradX, -1 * gradY);
-			curvedArea(ctx, e1, gradX, gradY);
+			ctx.arcTo(this.pos[0] + this.width, this.pos[1] + this.height, this.pos[0], this.pos[1] + this.height, this.radius);
+			ctx.arcTo(this.pos[0], this.pos[1] + this.height, this.pos[0], this.pos[1], this.radius);
 			ctx.closePath();
 			ctx.fill();
 			ctx.stroke();
@@ -174,65 +164,20 @@ document.addEventListener('DOMContentLoaded', function() {
 	};
 
 	class water {
-		constructor(height, width, x, y) {
+		constructor(height, width, radius, x, y) {
 			this.height = height;
 			this.width = width;
+			this.radius = radius;
 			this.pos = [x, y];
 		};
 
 		draw(ctx) {
-			// Outline
-			ctx.fillStyle = "white";
-			ctx.lineWidth = 3;
-			ctx.beginPath();
-			ctx.rect(this.pos[0], this.pos[1], this.width, this.height);
-			ctx.closePath();
-			ctx.fill();
-			ctx.stroke();
+			new piknometer(this.height, this.width, this.radius, this.pos[0], this.pos[1]).draw(ctx, "blue");
+		};
 
-			// Lower division(red part)
-			const divide = 0.80;
-			ctx.fillStyle = "red";
-			ctx.lineWidth = lineWidth;
-			ctx.beginPath();
-			ctx.rect(this.pos[0], this.pos[1] + divide * this.height, this.width, (1 - divide) * this.height);
-			ctx.closePath();
-			ctx.fill();
-			ctx.stroke();
-
-			// Main segment(pink part)
-			const gap = 0.05;
-			ctx.fillStyle = "pink";
-			ctx.lineWidth = lineWidth;
-			ctx.beginPath();
-			ctx.rect(this.pos[0] + gap * this.width, this.pos[1] + gap * this.height, (1 - 2 * gap) * this.width, (divide - gap) * this.height);
-			ctx.closePath();
-			ctx.fill();
-			ctx.stroke();
-
-			// Horizontal rectangle at bottom
-			const margin = [0.30, 0.05];
-			ctx.fillStyle = "white";
-			ctx.lineWidth = lineWidth;
-			ctx.beginPath();
-			ctx.rect(this.pos[0] + margin[0] * this.width, this.pos[1] + (margin[1] + divide) * this.height, (1 - 2 * margin[0]) * this.width, (1 - divide - 2 * margin[1]) * this.height);
-			ctx.closePath();
-			ctx.fill();
-			ctx.stroke();
-
-			ctx.font = "30px Arial";
-			ctx.fillStyle = "black";
-			ctx.fillText("Water", this.pos[0] + margin[0] * this.width + 10, this.pos[1] + (margin[1] + divide) * this.height + 25);
-
-			// Small button at bottom
-			const buttonGapX = 0.10;
-			ctx.fillStyle = "white";
-			ctx.lineWidth = lineWidth;
-			ctx.beginPath();
-			ctx.rect(this.pos[0] + buttonGapX * this.width, this.pos[1] + (margin[1] + divide) * this.height, (margin[0] - 2 * buttonGapX) * this.width, (1 - divide - 2 * margin[1]) * this.height);
-			ctx.closePath();
-			ctx.fill();
-			ctx.stroke();
+		adding(unit) {
+			this.height -= unit;
+			this.pos[1] += unit;
 		};
 	};
 
@@ -243,13 +188,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
 		objs = {
 			"weight": new weight(270, 240, 90, 160),
-			"water": new water(330, 240, 510, 30),
-			"piknometer": new piknometer(120, 150, 8, 600, 240),
-			"soil": new soil(90, 150, 8, 600, 270),
+			"piknometer": new piknometer(180, 90, 8, 600, 180),
+			"water": new water(10, 90, 8, 165, 175),
+			"soil": new soil(60, 90, 8, 600, 270),
 		};
 		keys = [];
 
-		enabled = [["weight"], ["weight", "piknometer"], ["weight", "piknometer"], ["weight", "piknometer", "soil"], ["weight", "piknometer", "soil"], ["piknometer", "soil", "water"], ["piknometer", "soil", "water"], ["piknometer", "soil", "water"], ["weight", "piknometer", "soil"], []];
+		enabled = [["weight"], ["weight", "piknometer"], ["weight", "piknometer"], ["weight", "piknometer", "soil"], ["weight", "piknometer", "soil"], ["weight", "piknometer", "soil", "water"], ["weight", "piknometer", "soil", "water"], ["piknometer"], ["weight", "piknometer", "water"], ["weight", "piknometer", "water"], []];
 		step = 0;
 		translate = [0, 0];
 		lim = [-1, -1];
@@ -291,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		});
 	};
 
-	function check(event, translate, step, flag=true)
+	function check(event, translate, flag=true)
 	{ 
 		if(translate[0] != 0 || translate[1] != 0)
 		{
@@ -311,8 +256,8 @@ document.addEventListener('DOMContentLoaded', function() {
 					hover = true;
 					translate[0] = -5;
 					translate[1] = -5;
-					lim[0] = 135;
-					lim[1] = 110;
+					lim[0] = 165;
+					lim[1] = 55;
 				}
 
 				else if(step === 4 && val === "soil")
@@ -320,33 +265,22 @@ document.addEventListener('DOMContentLoaded', function() {
 					hover = true;
 					translate[0] = -5;
 					translate[1] = -5;
-					lim[0] = 135;
-					lim[1] = 140;
+					lim[0] = 165;
+					lim[1] = 175;
 				}
 
-				else if(step === 6 && val === "piknometer")
+				else if(step === 7 && val === "piknometer") 
 				{
 					hover = true;
-					translate[0] = 5;
-					translate[1] = 5;
-					lim[0] = 560;
-					lim[1] = 150;
-				}
+					if(flag)
+					{
+						keys = keys.filter(function(val, index) {
+							return val != "soil" && val != "water";
+						});
 
-				else if(step === 7 && val === "water" && canvasPos[0] >= objs[val].pos[0] - errMargin && canvasPos[0] <= objs[val].pos[0] + objs[val].width + errMargin && canvasPos[1] >= objs[val].pos[1] + objs[val].height * 0.8 - errMargin && canvasPos[1] <= objs[val].pos[1] + objs[val].height + errMargin)
-				{
-					hover = true;
-					translate[1] = 1;
-					lim[1] = 210;
-				}
-
-				else if(step === 8 && val === "piknometer")
-				{
-					hover = true;
-					translate[0] = -5;
-					translate[1] = -5;
-					lim[0] = 135;
-					lim[1] = 110;
+						objs['water'] = new water(0, 90, 8, 165, 235);
+						step += 1;
+					}
 				}
 			}
 		});
@@ -395,10 +329,11 @@ document.addEventListener('DOMContentLoaded', function() {
 		"Click on the piknometer to move it to the weighing machine and weigh it.",
 		"Click on 'Soil Sample' in the apparatus menu, set appropriate input values (Soil Mass) and click 'Add' to add a soil sample to the workspace.",
 		"Click on the soil sample to add it to the piknometer and weigh it.",
-		"Click on 'Water' in the apparatus menu to add an water to the workspace.", 
-		"Click on the piknometer to move it to the water.",
-		"Click on the water red portion to start the water and heat the soil.",
-		"Click on the piknometer with dry soil to weigh it.",
+		"Click on 'Water' in the apparatus menu to add water to the piknometer and weigh the piknometer contents.", 
+		"Click on 'Water' in the apparatus menu to add water to the piknometer and weigh the piknometer contents.", 
+		"Click on the piknometer to empty it out.",
+		"Click on 'Water' in the apparatus menu to fill the piknometer with water and weigh it.", 
+		"Click on 'Water' in the apparatus menu to fill the piknometer with water and weigh it.", 
 		"Click the restart button to perform the experiment again.",
 	];
 
@@ -422,6 +357,12 @@ document.addEventListener('DOMContentLoaded', function() {
 				return;
 			}
 
+			else if(elem === "water")
+			{
+				translate[1] = -1;
+				lim[1] = 55;
+			}
+
 			keys.push(elem);
 			step += 1;
 		});
@@ -429,8 +370,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	// Input Parameters 
 	let wetSoilMass = 100; 
-	canvas.addEventListener('mousemove', function(event) {check(event, translate, step, false);});
-	canvas.addEventListener('click', function(event) {check(event, translate, step);});
+	canvas.addEventListener('mousemove', function(event) {check(event, translate, false);});
+	canvas.addEventListener('click', function(event) {check(event, translate);});
 
 	const submitButton = document.getElementById("submit"), table = document.getElementsByClassName("table")[0];
 	submitButton.addEventListener('click', function(event) {
@@ -498,7 +439,13 @@ document.addEventListener('DOMContentLoaded', function() {
 		if(translate[0] != 0 || translate[1] != 0)
 		{
 			let temp = step;
-			const soilMoves = [4, 6, 7, 8], piknometerMoves = [2, 6, 8];
+			const soilMoves = [4], piknometerMoves = [2], waterMoves = [6, 9];
+
+			if(waterMoves.includes(step))
+			{
+				objs['water'].adding(translate[1]);
+				temp = limCheck(objs['water'], translate, lim, step);
+			}
 
 			if(soilMoves.includes(step))
 			{
