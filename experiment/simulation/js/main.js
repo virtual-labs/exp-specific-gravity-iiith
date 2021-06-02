@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
 		const soilData = { 'Silt': randomNumber(22.5, 27.5), 'Sand': randomNumber(12, 16), 'Clay': randomNumber(30, 50) };
 		tableData.forEach(function(row, index) {
 			const ans = (Number)(soilData[row['Soil Type']]);
-			row['Water Content(%)'] = ans;
-			row['Dry Soil Mass(g)'] = ((100 * wetSoilMass) / (ans + 100)).toFixed(2);
+			row['Specific Gravity'] = ans;
+			row['Soil Mass(g)'] = ((100 * wetSoilMass) / (ans + 100)).toFixed(2);
 		});
 	};
 
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 			else if(step === 4)
 			{
-				document.getElementById("output2").innerHTML = "Mass of wet soil = " + String(wetSoilMass) + "g";
+				document.getElementById("output2").innerHTML = "Mass of water = " + String(wetSoilMass) + "g";
 			}
 
 			else if(step === enabled.length - 2)
@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			this.width = width;
 			this.radius = radius;
 			this.pos = [x, y];
+			this.moves = [2];
 		};
 
 		draw(ctx, fill="white") {
@@ -112,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			this.width = width;
 			this.radius = radius;
 			this.pos = [x, y];
+			this.moves = [4];
 		};
 
 		draw(ctx) {
@@ -156,6 +158,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			this.img = new Image();
 			this.img.src = './images/weighing machine.png';
 			this.img.onload = () => { ctx.drawImage(this.img, this.pos[0], this.pos[1], this.width, this.height); }; 
+			this.moves = [];
 		};
 
 		draw(ctx) {
@@ -169,10 +172,11 @@ document.addEventListener('DOMContentLoaded', function() {
 			this.width = width;
 			this.radius = radius;
 			this.pos = [x, y];
+			this.moves = [6, 9];
 		};
 
 		draw(ctx) {
-			new piknometer(this.height, this.width, this.radius, this.pos[0], this.pos[1]).draw(ctx, "blue");
+			new piknometer(this.height, this.width, this.radius, this.pos[0], this.pos[1]).draw(ctx, "#1ca3ec");
 		};
 
 		adding(unit) {
@@ -184,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	function init()
 	{
 		document.getElementById("output1").innerHTML = "Mass of piknometer = ___ g";
-		document.getElementById("output2").innerHTML = "Mass of wet soil = ___ g";
+		document.getElementById("output2").innerHTML = "Mass of water = ___ g";
 
 		objs = {
 			"weight": new weight(270, 240, 90, 160),
@@ -341,9 +345,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	init();
 
 	const tableData = [
-		{ "Soil Type": "Silt", "Dry Soil Mass(g)": "", "Water Content(%)": "" },
-		{ "Soil Type": "Sand", "Dry Soil Mass(g)": "", "Water Content(%)": "" },
-		{ "Soil Type": "Clay", "Dry Soil Mass(g)": "", "Water Content(%)": "" },
+		{ "Soil Type": "Silt", "Soil Mass(g)": "", "Specific Gravity": "" },
+		{ "Soil Type": "Sand", "Soil Mass(g)": "", "Specific Gravity": "" },
+		{ "Soil Type": "Clay", "Soil Mass(g)": "", "Specific Gravity": "" },
 	];
 
 	const objNames = Object.keys(objs);
@@ -439,33 +443,22 @@ document.addEventListener('DOMContentLoaded', function() {
 		if(translate[0] != 0 || translate[1] != 0)
 		{
 			let temp = step;
-			const soilMoves = [4], piknometerMoves = [2], waterMoves = [6, 9];
 
-			if(waterMoves.includes(step))
-			{
-				objs['water'].adding(translate[1]);
-				temp = limCheck(objs['water'], translate, lim, step);
-			}
-
-			if(soilMoves.includes(step))
-			{
-				updatePos(objs['soil'], translate);
-				if(step === 7)
+			keys.forEach(function(key, ind) {
+				if(objs[key].moves.includes(step))
 				{
-					objs['soil'].heating(translate[1]);
-				}
+					if(key === "water")
+					{
+						objs[key].adding(translate[1]);
+					}
 
-				if(step === 4 || step === 7)
-				{
-					temp = limCheck(objs['soil'], translate, lim, step);
+					else
+					{
+						updatePos(objs[key], translate);
+					}
+					temp = limCheck(objs[key], translate, lim, step);
 				}
-			}
-
-			if(piknometerMoves.includes(step))
-			{
-				updatePos(objs['piknometer'], translate);
-				temp = limCheck(objs['piknometer'], translate, lim, step);
-			}
+			});
 
 			step = temp;
 		}
