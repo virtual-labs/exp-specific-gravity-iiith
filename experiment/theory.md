@@ -1,1 +1,3 @@
-### Link your theory in here
+The specific gravity of a substance, designated as Gs, is defined as the ratio of the density of that substance to the density of distilled water at a specified temperature. Since it is a ratio, the value of Gs does not depend on the system of units used and is a numerical value having no units. For soil solids, Gs maybe written as: //
+Gs = density of the soil solids / density of water = mass of soil solids / mass of an equal volume of water
+The specific gravity of soil solids is determined by either (a) density bottle or (b) specific gravity flask or (c) pycnometer. The density bottle is suitable for all types of soil and it is the accurate method. Whereas the specific gravity flask or pycnometer methods are only suitable for coarse grained soils.

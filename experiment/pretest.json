@@ -1,18 +1,39 @@
-[
-{"question":"This is a Sample Question 1?",
-"answers":{
-            "a":"answer1",
-            "b":"answer2",
-            "c":"answer3",
-            "d":"answer4"
-          },
-"correctAnswer":"a"},
-{"question":"This is a Sample Question 2?",
-"answers":{
-            "a":"answer1",
-            "b":"answer2",
-            "c":"answer3",
-            "d":"answer4"
-          },
-"correctAnswer":"c"} 
-]
+{
+	"version": 2.0,
+	"questions": [
+		{
+			"question": "1. A pycnometer is used to determine ____.",
+			"answers": {
+				"a": "Water content and voids ratio",
+				"b": "Specific gravity and dry density",
+				"c": "Water content and specific gravity",
+				"d": "Voids ratio and dry density"
+			},
+			"explanations": {
+				"a": "",
+				"b": "",
+				"c": "",
+				"d": ""
+			},
+			"difficulty": "beginner",
+			"correctAnswer": "c"
+		},
+		{
+			"question": "2. The weight of a pycnometer containing 400 g sand and water full to the top is 2150 g. The weight of pycnometer full of clean water is 1950 g. If the specific gravity of the soil is 2.5, what is the water content of the soil?",
+			"answers": {
+				"a": "5%",
+				"b": "10%",
+				"c": "15%",
+				"d": "20%"
+			},
+			"explanations": {
+				"a": "",
+				"b": "",
+				"c": "",
+				"d": ""
+			},
+			"difficulty": "advanced",
+			"correctAnswer": "d"
+		},
+	]
+}

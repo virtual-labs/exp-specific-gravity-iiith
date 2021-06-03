@@ -1,18 +1,22 @@
-[
-{"question":"This is a Sample Question 1?",
-"answers":{
-            "a":"answer1",
-            "b":"answer2",
-            "c":"answer3",
-            "d":"answer4"
-          },
-"correctAnswer":"a"},
-{"question":"This is a Sample Question 2?",
-"answers":{
-            "a":"answer1",
-            "b":"answer2",
-            "c":"answer3",
-            "d":"answer4"
-          },
-"correctAnswer":"c"} 
-]
+{
+	"version": 2.0,
+	"questions": [
+		{
+			"question": "1. For determing the specific gravity of soil solids, using a pycnometer of 500 cc, the following data is available: Weight of dry empty pycnometer = 125 g; Weight of dried soil and pycnometer = 500 g; Weight of dried soil and distilled water filled to the top of the pycnometer = 850 g. Determine the specific gravity of the soil.",
+			"answers": {
+				"a": "2.0",
+				"b": "2.25",
+				"c": "2.50",
+				"d": "2.75",
+			},
+			"explanations": {
+				"a": "",
+				"b": "",
+				"c": "",
+				"d": "",
+			},
+			"difficulty": "advanced",
+			"correctAnswer": "c"
+		},
+	]
+}
