@@ -1,1 +1,8 @@
-### Procedure
+1. Add a weighing machine and a piknometer from the apparatus menu and weigh the piknometer by clicking on it (W1). Observe the change in the observations menu. The piknometer is weighed to account for its weight in future measurements of other components added to the piknometer.
+2. Add a soil sample from the apparatus menu by clicking the submit button after setting the soil sample mass to an appropriate value. 
+3. Add the sample to the piknometer and weigh it by clicking on it (W2). This gives us the weight of the soil + piknometer and we can easily obtain the weight of the soil alone by simply subtracting the weight of the piknometer as is visible from the value in the observations menu.
+4. Add water to the piknometer from the apparatus menu and weigh the filled piknometer. This gives us the weight of the soil + water + piknometer and we can easily obtain the weight of the water (W3) alone by subtracting the weights of the soil and piknometer we obtained earlier. Note that the volume of water in this case is the volume of the piknometer - volume of the soil sample.
+5. Click on the piknometer to empty it out (remove all its contents) and fill it up with water completely by adding water from the apparatus menu.
+6. Weigh the water filled piknometer to obtain the weight of the piknometer + water. We can easily obtain the weight of the water (W4) alone by simply subtracting the weight of the piknometer obtained earlier. Note that the volume of the water in this case is the same as the volume of the piknometer.
+7. Check the observation table. The table presents the observations (including specific gravity as per the formula in the theory) for different types of soil as different soils have slightly different specific gravities. We obtain the weight of water of same volume as the soil sample by simply subtracting the two weights of water we obtained as W4 - W3.
+8. Repeat the experiment for different values of soil sample mass.

@@ -8,16 +8,16 @@ document.addEventListener('DOMContentLoaded', function() {
 	restartButton.addEventListener('click', function() { restart(); });
 
 	function randomNumber(min, max) {
-		return (Math.random() * (max - min + 1) + min).toFixed(2);
+		return (Math.random() * (max - min) + min).toFixed(2);
 	};
 
 	function logic(tableData)
 	{
-		const soilData = { 'Silt': randomNumber(22.5, 27.5), 'Sand': randomNumber(12, 16), 'Clay': randomNumber(30, 50) };
+		const soilData = { 'Silt': randomNumber(2.65, 2.7), 'Sand': randomNumber(2.63, 2.67), 'Clay': randomNumber(2.67, 2.9) };
 		tableData.forEach(function(row, index) {
 			const ans = (Number)(soilData[row['Soil Type']]);
+			row['Water Mass(g) [same volume as soil]'] = (wetSoilMass / ans).toFixed(2);
 			row['Specific Gravity'] = ans;
-			row['Soil Mass(g)'] = ((100 * wetSoilMass) / (ans + 100)).toFixed(2);
 		});
 	};
 
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 			else if(step === 4)
 			{
-				document.getElementById("output2").innerHTML = "Mass of water = " + String(wetSoilMass) + "g";
+				document.getElementById("output2").innerHTML = "Mass of soil = " + String(wetSoilMass) + "g";
 			}
 
 			else if(step === enabled.length - 2)
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	function init()
 	{
 		document.getElementById("output1").innerHTML = "Mass of piknometer = ___ g";
-		document.getElementById("output2").innerHTML = "Mass of water = ___ g";
+		document.getElementById("output2").innerHTML = "Mass of soil = ___ g";
 
 		objs = {
 			"weight": new weight(270, 240, 90, 160),
@@ -345,9 +345,9 @@ document.addEventListener('DOMContentLoaded', function() {
 	init();
 
 	const tableData = [
-		{ "Soil Type": "Silt", "Soil Mass(g)": "", "Specific Gravity": "" },
-		{ "Soil Type": "Sand", "Soil Mass(g)": "", "Specific Gravity": "" },
-		{ "Soil Type": "Clay", "Soil Mass(g)": "", "Specific Gravity": "" },
+		{ "Soil Type": "Silt", "Specific Gravity": "" },
+		{ "Soil Type": "Sand", "Specific Gravity": "" },
+		{ "Soil Type": "Clay", "Specific Gravity": "" },
 	];
 
 	const objNames = Object.keys(objs);
