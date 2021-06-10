@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		{
 			if(step === 2)
 			{
-				document.getElementById("output1").innerHTML = "Mass of piknometer = " + String(10) + "g";
+				document.getElementById("output1").innerHTML = "Mass of pycnometer = " + String(10) + "g";
 			}
 
 			else if(step === 4)
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		obj.pos[1] += translate[1];
 	};
 
-	class piknometer {
+	class pycnometer {
 		constructor(height, width, radius, x, y) {
 			this.height = height;
 			this.width = width;
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		};
 
 		draw(ctx) {
-			new piknometer(this.height, this.width, this.radius, this.pos[0], this.pos[1]).draw(ctx, "#1ca3ec");
+			new pycnometer(this.height, this.width, this.radius, this.pos[0], this.pos[1]).draw(ctx, "#1ca3ec");
 		};
 
 		adding(unit) {
@@ -187,18 +187,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	function init()
 	{
-		document.getElementById("output1").innerHTML = "Mass of piknometer = ___ g";
+		document.getElementById("output1").innerHTML = "Mass of pycnometer = ___ g";
 		document.getElementById("output2").innerHTML = "Mass of soil = ___ g";
 
 		objs = {
 			"weight": new weight(270, 240, 90, 160),
-			"piknometer": new piknometer(180, 90, 8, 600, 180),
+			"pycnometer": new pycnometer(180, 90, 8, 600, 180),
 			"water": new water(10, 90, 8, 165, 175),
 			"soil": new soil(60, 90, 8, 600, 270),
 		};
 		keys = [];
 
-		enabled = [["weight"], ["weight", "piknometer"], ["weight", "piknometer"], ["weight", "piknometer", "soil"], ["weight", "piknometer", "soil"], ["weight", "piknometer", "soil", "water"], ["weight", "piknometer", "soil", "water"], ["piknometer"], ["weight", "piknometer", "water"], ["weight", "piknometer", "water"], []];
+		enabled = [["weight"], ["weight", "pycnometer"], ["weight", "pycnometer"], ["weight", "pycnometer", "soil"], ["weight", "pycnometer", "soil"], ["weight", "pycnometer", "soil", "water"], ["weight", "pycnometer", "soil", "water"], ["pycnometer"], ["weight", "pycnometer", "water"], ["weight", "pycnometer", "water"], []];
 		step = 0;
 		translate = [0, 0];
 		lim = [-1, -1];
@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		keys.forEach(function(val, ind) {
 			if(canvasPos[0] >= objs[val].pos[0] - errMargin && canvasPos[0] <= objs[val].pos[0] + objs[val].width + errMargin && canvasPos[1] >= objs[val].pos[1] - errMargin && canvasPos[1] <= objs[val].pos[1] + objs[val].height + errMargin)
 			{
-				if(step === 2 && val === "piknometer")
+				if(step === 2 && val === "pycnometer")
 				{
 					hover = true;
 					translate[0] = -5;
@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					lim[1] = 175;
 				}
 
-				else if(step === 7 && val === "piknometer") 
+				else if(step === 7 && val === "pycnometer") 
 				{
 					hover = true;
 					if(flag)
@@ -329,15 +329,15 @@ document.addEventListener('DOMContentLoaded', function() {
 	const fill = "#A9A9A9", border = "black", lineWidth = 1.5, fps = 150;
 	const msgs = [
 		"Click on 'Weighing Machine' in the apparatus menu to add a weighing machine to the workspace.", 
-		"Click on 'Piknometer' in the apparatus menu to add a piknometer to the workspace.",
-		"Click on the piknometer to move it to the weighing machine and weigh it.",
+		"Click on 'Pycnometer' in the apparatus menu to add a pycnometer to the workspace.",
+		"Click on the pycnometer to move it to the weighing machine and weigh it.",
 		"Click on 'Soil Sample' in the apparatus menu, set appropriate input values (Soil Mass) and click 'Add' to add a soil sample to the workspace.",
-		"Click on the soil sample to add it to the piknometer and weigh it.",
-		"Click on 'Water' in the apparatus menu to add water to the piknometer and weigh the piknometer contents.", 
-		"Click on 'Water' in the apparatus menu to add water to the piknometer and weigh the piknometer contents.", 
-		"Click on the piknometer to empty it out.",
-		"Click on 'Water' in the apparatus menu to fill the piknometer with water and weigh it.", 
-		"Click on 'Water' in the apparatus menu to fill the piknometer with water and weigh it.", 
+		"Click on the soil sample to add it to the pycnometer and weigh it.",
+		"Click on 'Water' in the apparatus menu to add water to the pycnometer and weigh the pycnometer contents.", 
+		"Click on 'Water' in the apparatus menu to add water to the pycnometer and weigh the pycnometer contents.", 
+		"Click on the pycnometer to empty it out.",
+		"Click on 'Water' in the apparatus menu to fill the pycnometer with water and weigh it.", 
+		"Click on 'Water' in the apparatus menu to fill the pycnometer with water and weigh it.", 
 		"Click the restart button to perform the experiment again.",
 	];
 
