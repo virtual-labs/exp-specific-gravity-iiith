@@ -19,7 +19,7 @@
 			"correctAnswer": "c"
 		},
 		{
-			"question": "2. The weight of a pycnometer containing 400 g sand and water full to the top is 2150 g. The weight of pycnometer full of clean water is 1950 g. If the specific gravity of the soil is 2.5, what is the water content of the soil?",
+			"question": "2. The weight of a pycnometer containing 400 g (W1) sand and water full to the top is 2150 g (W2). The weight of pycnometer full of clean water is 1950 g (W3). If the specific gravity of the soil is 2.5, what is the water content of the soil?",
 			"answers": {
 				"a": "5%",
 				"b": "10%",
@@ -27,10 +27,10 @@
 				"d": "20%"
 			},
 			"explanations": {
-				"a": "",
-				"b": "",
-				"c": "",
-				"d": ""
+				"a": "First we find the mass of the water (W<sub>w</sub>) that occupies the same volume as the soil sample by the following formula: W3 - (W2 - W1)[gives us mass of water alone from W2]. Next we obtain the mass of wet soil by the formula: W<sub>s</sub> = G<sub>s</sub> * W<sub>w</sub>. Then we obtain the mass of water in the soil as W = W<sub>w</sub> - W1. Finally we obtain the water content as w = W / W<sub>s</sub>.",
+				"b": "First we find the mass of the water (W<sub>w</sub>) that occupies the same volume as the soil sample by the following formula: W3 - (W2 - W1)[gives us mass of water alone from W2]. Next we obtain the mass of wet soil by the formula: W<sub>s</sub> = G<sub>s</sub> * W<sub>w</sub>. Then we obtain the mass of water in the soil as W = W<sub>w</sub> - W1. Finally we obtain the water content as w = W / W<sub>s</sub>.",
+				"c": "First we find the mass of the water (W<sub>w</sub>) that occupies the same volume as the soil sample by the following formula: W3 - (W2 - W1)[gives us mass of water alone from W2]. Next we obtain the mass of wet soil by the formula: W<sub>s</sub> = G<sub>s</sub> * W<sub>w</sub>. Then we obtain the mass of water in the soil as W = W<sub>w</sub> - W1. Finally we obtain the water content as w = W / W<sub>s</sub>.",
+				"d": "First we find the mass of the water (W<sub>w</sub>) that occupies the same volume as the soil sample by the following formula: W3 - (W2 - W1)[gives us mass of water alone from W2]. Next we obtain the mass of wet soil by the formula: W<sub>s</sub> = G<sub>s</sub> * W<sub>w</sub>. Then we obtain the mass of water in the soil as W = W<sub>w</sub> - W1. Finally we obtain the water content as w = W / W<sub>s</sub>."
 			},
 			"difficulty": "advanced",
 			"correctAnswer": "d"
