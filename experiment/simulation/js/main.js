@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	function check(event, translate, flag=true)
 	{ 
-		if(translate[0] != 0 || translate[1] != 0)
+		if(translate[0] !== 0 || translate[1] !== 0)
 		{
 			return;
 		}
@@ -279,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function() {
 					if(flag)
 					{
 						keys = keys.filter(function(val, index) {
-							return val != "soil" && val != "water";
+							return val !== "soil" && val !== "water";
 						});
 
 						objs['water'] = new water(0, 90, 8, 165, 235);
@@ -440,7 +440,7 @@ document.addEventListener('DOMContentLoaded', function() {
 			document.getElementById("main").style.pointerEvents = 'auto';
 		}
 
-		if(translate[0] != 0 || translate[1] != 0)
+		if(translate[0] !== 0 || translate[1] !== 0)
 		{
 			let temp = step;
 
