@@ -10,10 +10,10 @@
 				"d": "Voids ratio and dry density"
 			},
 			"explanations": {
-				"a": "",
-				"b": "",
-				"c": "",
-				"d": ""
+				"a": "Voids ratio is indirectly calculated by taking the volume of the soil sample. Hence, it is not possible to calculate the voids ratio using pycnometer.",
+				"b": "Pycnometer is used to quickly calculate specific gravity. For calculating dry density, the oven test should be considered.",
+				"c": "Pycnometer test is used to calculate water content and specific gravity of a soil sample. The formulae are self explanatory.",
+				"d": "Voids ratio is indirectly calculated by taking the volume of the soil sample. Hence, it is not possible to calculate the voids ratio using pycnometer. Pycnometer is used to quickly calculate specific gravity. For calculating dry density, the oven test should be considered."
 			},
 			"difficulty": "beginner",
 			"correctAnswer": "c"
