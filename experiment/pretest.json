@@ -10,16 +10,16 @@
 				"d": "Voids ratio and dry density"
 			},
 			"explanations": {
-				"a": "Voids ratio is indirectly calculated by taking the volume of the soil sample. Hence, it is not possible to calculate the voids ratio using pycnometer.",
+				"a": "Voids ratio is indirectly calculated by taking the volume of the soil sample which cannot be done with pycnometer.",
 				"b": "Pycnometer is used to quickly calculate specific gravity. For calculating dry density, the oven test should be considered.",
 				"c": "Pycnometer test is used to calculate water content and specific gravity of a soil sample. The formulae are self explanatory.",
-				"d": "Voids ratio is indirectly calculated by taking the volume of the soil sample. Hence, it is not possible to calculate the voids ratio using pycnometer. Pycnometer is used to quickly calculate specific gravity. For calculating dry density, the oven test should be considered."
+				"d": "Voids ratio is indirectly calculated by taking the volume of the soil sample which cannot be done with pycnometer. Additionally, for calculating dry density, the oven test should be considered."
 			},
 			"difficulty": "beginner",
 			"correctAnswer": "c"
 		},
 		{
-			"question": "2. The weight of a pycnometer containing 400 g (W1) sand and water full to the top is 2150 g (W2). The weight of pycnometer full of clean water is 1950 g (W3). If the specific gravity of the soil is 2.5, what is the water content of the soil?",
+			"question": "2. The weight of a pycnometer containing 400 g (W1) sand and water full to the top is 2150 g (W2). The weight of pycnometer full of clean water is 1950 g (W3). If the specific gravity (G<sub>s</sub>) of the soil is 2.5, what is the water content of the soil?",
 			"answers": {
 				"a": "5%",
 				"b": "10%",
