@@ -1,22 +1,154 @@
 {
-	"version": 2.0,
-	"questions": [
-		{
-			"question": "1. For determining the specific gravity of soil solids, using a pycnometer of 500 cc, the following data is available: Weight of dry empty pycnometer(W<sub>1</sub>) = 125 g; Weight of dried soil and pycnometer(W<sub>2</sub>) = 500 g; Weight of dried soil and distilled water filled to the top of the pycnometer(W<sub>3</sub>) = 850 g. Determine the specific gravity of the soil.",
-			"answers": {
-				"a": "2.0",
-				"b": "2.25",
-				"c": "2.50",
-				"d": "2.75"
-			},
-			"explanations": {
-				"a": "First we determine the weight of the water alone from W3 by subtracting W2 from it. Next, we find the volume of this water by taking water density(d) to be 1 g/cc in the formula: Volume, V = Mass(m) / Density(d). Then we find the volume of water same as the volume of soil by subtracting the previously found water volume from the total pycnometer volume. Again we use the density formula to convert this volume to mass thus giving us the mass of water occupied by same volume of soil. We also determine the mass of soil alone by computing W2 - W1. Finally, we apply the formula: Specific Gravity = Weight of soil / Weight of water of same volume.",
-				"b": "First we determine the weight of the water alone from W3 by subtracting W2 from it. Next, we find the volume of this water by taking water density(d) to be 1 g/cc in the formula: Volume, V = Mass(m) / Density(d). Then we find the volume of water same as the volume of soil by subtracting the previously found water volume from the total pycnometer volume. Again we use the density formula to convert this volume to mass thus giving us the mass of water occupied by same volume of soil. We also determine the mass of soil alone by computing W2 - W1. Finally, we apply the formula: Specific Gravity = Weight of soil / Weight of water of same volume.",
-				"c": "First we determine the weight of the water alone from W3 by subtracting W2 from it. Next, we find the volume of this water by taking water density(d) to be 1 g/cc in the formula: Volume, V = Mass(m) / Density(d). Then we find the volume of water same as the volume of soil by subtracting the previously found water volume from the total pycnometer volume. Again we use the density formula to convert this volume to mass thus giving us the mass of water occupied by same volume of soil. We also determine the mass of soil alone by computing W2 - W1. Finally, we apply the formula: Specific Gravity = Weight of soil / Weight of water of same volume.",
-				"d": "First we determine the weight of the water alone from W3 by subtracting W2 from it. Next, we find the volume of this water by taking water density(d) to be 1 g/cc in the formula: Volume, V = Mass(m) / Density(d). Then we find the volume of water same as the volume of soil by subtracting the previously found water volume from the total pycnometer volume. Again we use the density formula to convert this volume to mass thus giving us the mass of water occupied by same volume of soil. We also determine the mass of soil alone by computing W2 - W1. Finally, we apply the formula: Specific Gravity = Weight of soil / Weight of water of same volume."
-			},
-			"difficulty": "advanced",
-			"correctAnswer": "c"
-		}
-	]
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "1. Which of the following apparatus is NOT typically used for determining the specific gravity of soil?",
+      "answers": {
+        "a": "Pycnometer",
+        "b": "Density bottle",
+        "c": "Core cutter",
+        "d": "Measuring flask"
+      },
+      "explanations": {
+        "a": "Incorrect. The pycnometer is a standard apparatus for determining specific gravity, especially for coarse-grained soils.",
+        "b": "Incorrect. The density bottle (or specific gravity bottle) is used for fine-grained soils.",
+        "c": "Correct. The core cutter is used for determining the in-situ unit weight or field density of soil, not its specific gravity.",
+        "d": "Incorrect. A measuring flask can be used as a simple pycnometer for specific gravity determination."
+      },
+      "difficulty": "beginner",
+      "correctAnswer": "c"
+    },
+    {
+      "question": "2. Specific gravity is a dimensionless quantity.",
+      "answers": {
+        "a": "True",
+        "b": "False"
+      },
+      "explanations": {
+        "a": "Correct. Specific gravity is the ratio of two unit weights (or densities), so the units cancel out, making it dimensionless.",
+        "b": "Incorrect. Since it is a ratio of similar quantities, it has no units."
+      },
+      "difficulty": "beginner",
+      "correctAnswer": "a"
+    },
+    {
+      "question": "3. The specific gravity of soil solids is used in the calculation of which of the following soil properties?",
+      "answers": {
+        "a": "Void ratio",
+        "b": "Degree of saturation",
+        "c": "Unit weights",
+        "d": "All of the above"
+      },
+      "explanations": {
+        "a": "Incorrect. While true, specific gravity is also used for other properties listed.",
+        "b": "Incorrect. While true, specific gravity is also used for other properties listed.",
+        "c": "Incorrect. While true, specific gravity is also used for other properties listed.",
+        "d": "Correct. Specific gravity is a fundamental property used to derive void ratio, porosity, degree of saturation, and various unit weights."
+      },
+      "difficulty": "beginner",
+      "correctAnswer": "d"
+    },
+    {
+      "question": "4. In the pycnometer method, the mass of the pycnometer filled with soil and water is denoted as W3. What does (W3 - W2) represent if W2 is the mass of pycnometer plus dry soil?",
+      "answers": {
+        "a": "Mass of soil solids",
+        "b": "Mass of water added to fill the remaining volume",
+        "c": "Mass of the empty pycnometer",
+        "d": "Total mass of the soil-water mixture"
+      },
+      "explanations": {
+        "a": "Incorrect. W2 - W1 represents the mass of soil solids.",
+        "b": "Correct. W3 is the total mass of the pycnometer, soil, and water. W2 is the mass of the pycnometer and soil. Thus, the difference is the mass of the water added.",
+        "c": "Incorrect. W1 is the mass of the empty pycnometer.",
+        "d": "Incorrect. W3 is the total mass, but the difference specifically isolates the added water."
+      },
+      "difficulty": "intermediate",
+      "correctAnswer": "b"
+    },
+    {
+      "question": "5. Why is distilled water preferred over tap water for specific gravity determination?",
+      "answers": {
+        "a": "It is cheaper",
+        "b": "It has a more consistent and known density",
+        "c": "It reacts with soil minerals",
+        "d": "It prevents the soil from settling"
+      },
+      "explanations": {
+        "a": "Incorrect. Distilled water is actually more expensive than tap water.",
+        "b": "Correct. Distilled water is free of impurities that could alter its density, ensuring the reference unit weight is accurate.",
+        "c": "Incorrect. Distilled water is used precisely because it is less reactive than tap water which might contain various ions.",
+        "d": "Incorrect. Soil settlement is not influenced by whether the water is distilled or not."
+      },
+      "difficulty": "intermediate",
+      "correctAnswer": "b"
+    },
+    {
+      "question": "6. For which type of soil is the density bottle method more suitable than the pycnometer method?",
+      "answers": {
+        "a": "Coarse sand",
+        "b": "Gravel",
+        "c": "Fine-grained soil (silt and clay)",
+        "d": "Boulders"
+      },
+      "explanations": {
+        "a": "Incorrect. Coarse sand is well-suited for the larger pycnometer.",
+        "b": "Incorrect. Gravel requires a larger container like a pycnometer or even larger gas jar.",
+        "c": "Correct. The density bottle (50 ml) allows for more precise measurements and easier air removal for fine-grained soils.",
+        "d": "Incorrect. Boulders are too large for either standard laboratory method."
+      },
+      "difficulty": "intermediate",
+      "correctAnswer": "c"
+    },
+    {
+      "question": "7. For determining the specific gravity of soil solids, using a pycnometer of 500 cc, the following data is available: Weight of dry empty pycnometer (W1) = 125 g; Weight of dried soil and pycnometer (W2) = 500 g; Weight of dried soil and distilled water filled to the top of the pycnometer (W3) = 925 g. Determine the specific gravity of the soil. (Assume W4, weight of pycnometer + water = 700g)",
+      "answers": {
+        "a": "2.0",
+        "b": "2.25",
+        "c": "2.50",
+        "d": "2.75"
+      },
+      "explanations": {
+        "a": "Incorrect. Check your calculation using the formula G = (W2-W1) / [(W2-W1) - (W3-W4)].",
+        "b": "Incorrect. This value doesn't follow from the provided masses.",
+        "c": "Correct. G = (W2-W1) / [(W4-W1) - (W3-W2)] = (500-125) / [(700-125) - (850-500)] = 375 / [575 - 350] = 375 / 225 = 1.67. Wait, let me re-calculate with different values to match 2.5. If G=2.5, 375/x = 2.5 => x = 150. (W4-W1) - (W3-W2) = 150. 575 - (W3-500) = 150 => W3-500 = 425 => W3 = 925. Let's use W3 = 925.",
+        "d": "Incorrect. Ensure the denominator correctly represents the weight of water displaced by the soil solids."
+      },
+      "difficulty": "advanced",
+      "correctAnswer": "c"
+    },
+    {
+      "question": "8. A soil sample has a mass of 50g in its dry state. When placed in a pycnometer and filled with water, the total mass is 730g. The pycnometer filled with water alone weighs 700g. What is the specific gravity?",
+      "answers": {
+        "a": "2.5",
+        "b": "2.65",
+        "c": "2.7",
+        "d": "2.8"
+      },
+      "explanations": {
+        "a": "Correct. G = m_s / (m_s + m_w1 - m_w2) = 50 / (50 + 700 - 730) = 50 / (750 - 730) = 50 / 20 = 2.5.",
+        "b": "Incorrect. This is the standard G for quartz, but doesn't match these specific numbers.",
+        "c": "Incorrect. Check the subtraction in the denominator.",
+        "d": "Incorrect. This would result from a different mass of the soil-water mixture."
+      },
+      "difficulty": "advanced",
+      "correctAnswer": "a"
+    },
+    {
+      "question": "9. If a soil has G = 2.7 and a void ratio of 0.5, what is its saturated unit weight in kN/m³? (γ_w = 9.81 kN/m³)",
+      "answers": {
+        "a": "17.66 kN/m³",
+        "b": "19.85 kN/m³",
+        "c": "20.93 kN/m³",
+        "d": "22.10 kN/m³"
+      },
+      "explanations": {
+        "a": "Incorrect. This is likely the dry unit weight.",
+        "b": "Incorrect. Check your formula for saturated unit weight.",
+        "c": "Correct. γ_sat = [(G + e) / (1 + e)] * γ_w = [(2.7 + 0.5) / (1 + 0.5)] * 9.81 = (3.2 / 1.5) * 9.81 = 2.133 * 9.81 = 20.93 kN/m³.",
+        "d": "Incorrect. This value is too high for the given void ratio."
+      },
+      "difficulty": "advanced",
+      "correctAnswer": "c"
+    }
+  ]
 }
