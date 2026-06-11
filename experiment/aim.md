@@ -1,1 +1,1 @@
-To determine the specific gravity of soil using the pycnometer method.
+To determine the specific gravity of a soil sample using the pycnometer method.
