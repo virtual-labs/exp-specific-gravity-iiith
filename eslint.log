@@ -1,0 +1,46 @@
+
+/home/runner/work/exp-specific-gravity-iiith/exp-specific-gravity-iiith/experiment/simulation/js/main.js
+    6:8   warning  'instrMsg' is assigned a value but never used  no-unused-vars
+   12:3   warning  Unnecessary semicolon                          no-extra-semi
+   17:35  warning  'index' is defined but never used              no-unused-vars
+   22:3   warning  Unnecessary semicolon                          no-extra-semi
+   66:3   warning  Unnecessary semicolon                          no-extra-semi
+   72:3   warning  Unnecessary semicolon                          no-extra-semi
+   81:4   warning  Unnecessary semicolon                          no-extra-semi
+  107:4   warning  Unnecessary semicolon                          no-extra-semi
+  108:3   warning  Unnecessary semicolon                          no-extra-semi
+  117:4   warning  Unnecessary semicolon                          no-extra-semi
+  146:4   warning  Unnecessary semicolon                          no-extra-semi
+  150:4   warning  Unnecessary semicolon                          no-extra-semi
+  151:3   warning  Unnecessary semicolon                          no-extra-semi
+  162:4   warning  Unnecessary semicolon                          no-extra-semi
+  166:4   warning  Unnecessary semicolon                          no-extra-semi
+  167:3   warning  Unnecessary semicolon                          no-extra-semi
+  176:4   warning  Unnecessary semicolon                          no-extra-semi
+  180:4   warning  Unnecessary semicolon                          no-extra-semi
+  185:4   warning  Unnecessary semicolon                          no-extra-semi
+  186:3   warning  Unnecessary semicolon                          no-extra-semi
+  205:3   warning  Unnecessary semicolon                          no-extra-semi
+  219:3   warning  Unnecessary semicolon                          no-extra-semi
+  224:30  warning  'ind' is defined but never used                no-unused-vars
+  230:3   warning  Unnecessary semicolon                          no-extra-semi
+  233:34  warning  'ind' is defined but never used                no-unused-vars
+  235:47  warning  'i' is defined but never used                  no-unused-vars
+  241:3   warning  Unnecessary semicolon                          no-extra-semi
+  255:30  warning  'ind' is defined but never used                no-unused-vars
+  281:40  warning  'index' is defined but never used              no-unused-vars
+  300:3   warning  Unnecessary semicolon                          no-extra-semi
+  321:3   warning  Unnecessary semicolon                          no-extra-semi
+  329:8   warning  'fill' is assigned a value but never used      no-unused-vars
+  329:26  warning  'border' is assigned a value but never used    no-unused-vars
+  354:34  warning  'ind' is defined but never used                no-unused-vars
+  356:42  warning  'event' is defined but never used              no-unused-vars
+  381:50  warning  'event' is defined but never used              no-unused-vars
+  406:3   warning  Unnecessary semicolon                          no-extra-semi
+  421:35  warning  'ind' is defined but never used                no-unused-vars
+  447:31  warning  'ind' is defined but never used                no-unused-vars
+  468:3   warning  Unnecessary semicolon                          no-extra-semi
+
+✖ 40 problems (0 errors, 40 warnings)
+  0 errors and 26 warnings potentially fixable with the `--fix` option.
+
